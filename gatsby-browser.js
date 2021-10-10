@@ -3,7 +3,5 @@
  *
  * See: https://www.gatsbyjs.com/docs/browser-apis/
  */
-
-// You can delete this file if you're not using it
-import '@fontsource/karla';
-import '@fontsource/lato';
+import '@fontsource/assistant';
+import '@fontsource/poppins';

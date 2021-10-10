@@ -8,18 +8,13 @@ interface FooterProps {
 
 const Footer: FC<FooterProps> = ({ className }) => (
   <footer className={className}>
-    <Container>
-      © {new Date().getFullYear()}, Built with
-      {` `}
-      <a href="https://www.gatsbyjs.org">Gatsby</a>
-    </Container>
+    <Container>© {new Date().getFullYear()} An Inclusive Web</Container>
   </footer>
 );
 
 const StyledFooter = styled(Footer)`
-  color: #fffaff;
-  background: var(--primary-color);
   padding: 1rem 0;
+  margin: 0 auto;
 `;
 
 export default StyledFooter;

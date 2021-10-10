@@ -1,36 +1,30 @@
 import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
-  :root {
-    --primary-color: rebeccapurple;
-    --white: #FFFAFF;
-  }
   * {
     box-sizing: border-box;
   }
   html {
-    font-family: 'Lato', sans-serif;
+    font-family: ${({ theme: { fonts } }) => fonts.assistant};
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     touch-action: manipulation;
     overflow: hidden;
+    background-color: ${({ theme: { colors } }) => colors.background};
   }
   body {
     margin: 0;
   }
   main {
     flex: 1 0 auto;
-    h1,h2,h3,h4,h5,h6 {
-    font-family: 'Karla', sans-serif;
-    color: #0c2340;
-    }
-    a {
-      color: #2A5DB0;
+    h1, h2, h3, h4, h5, h6 {
+      font-family: ${({ theme: { fonts } }) => fonts.poppins};
+      color: ${({ theme: { colors } }) => colors.text};
     }
   }
   a {
     text-decoration: none;
-    color: inherit;
+    color: ${({ theme: { colors } }) => colors.primary};
   }
   article,
   aside,
@@ -223,7 +217,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     color: hsla(0, 0%, 0%, 0.8);
-    font-family: georgia, serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: normal;
     word-wrap: break-word;
     font-kerning: normal;

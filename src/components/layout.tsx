@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { GlobalStyle } from './globalStyle';
+import { GlobalStyle } from '../theme/globalStyle';
 import { MainWrapper } from './layoutComponents';
 import Header from './header';
 import Footer from './footer';
 
 const siteTitleQuery = graphql`
-  query SiteTitleQuery {
+  query SiteQuery {
     site {
       siteMetadata {
         title
