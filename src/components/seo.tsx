@@ -2,27 +2,27 @@ import React from 'react';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-interface SeoProps {
+const defaultSEOQuery = graphql`
+  query DefaultSEOQuery {
+    site {
+      siteMetadata {
+        title
+        description
+        author
+      }
+    }
+  }
+`;
+
+interface SEOProps {
   description?: string;
   lang?: string;
   meta?: [];
   title: string;
 }
 
-function Seo({ description = '', lang = 'en', meta = [], title }: SeoProps): JSX.Element {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `,
-  );
+function SEO({ description = '', lang = 'en', meta = [], title }: SEOProps): JSX.Element {
+  const { site } = useStaticQuery(defaultSEOQuery);
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
@@ -72,4 +72,4 @@ function Seo({ description = '', lang = 'en', meta = [], title }: SeoProps): JSX
   );
 }
 
-export default Seo;
+export default SEO;

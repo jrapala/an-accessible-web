@@ -1,37 +1,31 @@
 import React, { FC } from 'react';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
+import { Container } from './layoutComponents';
 
 interface HeaderProps {
+  className?: string;
   siteTitle?: string;
 }
 
-const Header: FC<HeaderProps> = ({ siteTitle = '' }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
+const Header: FC<HeaderProps> = ({ className, siteTitle = '' }) => (
+  <header className={className}>
+    <Container>
+      <h1>
+        <Link to="/">{siteTitle}</Link>
       </h1>
-    </div>
+    </Container>
   </header>
 );
 
-export default Header;
+const StyledHeader = styled(Header)`
+  color: var(--white);
+  background: var(--primary-color);
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  h1 {
+    margin: 0;
+  }
+`;
+
+export default StyledHeader;
