@@ -1,10 +1,10 @@
-import * as React from 'react';
+import React, { FC } from 'react';
 import { Link } from 'gatsby';
 
 import Layout from '../components/layout';
 import Seo from '../components/seo';
 
-const SecondPage = () => (
+const SecondPage: FC = () => (
   <Layout>
     <Seo title="Page two" />
     <h1>Hi from the second page</h1>

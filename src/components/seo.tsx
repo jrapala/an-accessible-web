@@ -9,7 +9,7 @@ interface SeoProps {
   title: string;
 }
 
-function Seo({ description = '', lang = 'en', meta = [], title }: SeoProps) {
+function Seo({ description = '', lang = 'en', meta = [], title }: SeoProps): JSX.Element {
   const { site } = useStaticQuery(
     graphql`
       query {
