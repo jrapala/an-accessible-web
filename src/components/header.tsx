@@ -1,25 +1,43 @@
 import React, { FC } from 'react';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
-import { Container } from './layoutComponents';
+import { ContainerStyles } from './LayoutComponents';
 
-interface HeaderProps {
-  className?: string;
-  siteTitle?: string;
+interface NavProps {
+  siteTitle: string;
 }
 
-const Header: FC<HeaderProps> = ({ className, siteTitle = '' }) => (
-  <header className={className}>
-    <Container>
-      <Link to="/">{siteTitle}</Link>
-    </Container>
+const MainNav = styled.nav`
+  ${ContainerStyles}
+  padding: 1rem;
+  margin-bottom: 1rem;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 1rem;
+    margin: 0;
+    align-items: center;
+    justify-content: start;
+
+    li:first-child > a {
+      text-decoration: none;
+    }
+  }
+`;
+
+const Header: FC<NavProps> = ({ siteTitle = '' }) => (
+  <header>
+    <MainNav>
+      <ul>
+        <li>
+          <Link to="/">{siteTitle}</Link>
+        </li>
+      </ul>
+    </MainNav>
   </header>
 );
 
-const StyledHeader = styled(Header)`
-  background: ${({ theme: { colors } }) => colors.background};
-  padding: 1rem 0;
-  margin-bottom: 1rem;
-`;
-
-export default StyledHeader;
+export default Header;

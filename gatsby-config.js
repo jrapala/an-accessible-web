@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `An Accessible Web Web`,
-    description: `Learn to build accessible websites that can be used by everyone.`,
+    title: `An Accessible Web`,
+    description: `Learn to build websites that work for <strong>everyone</strong>.`,
     author: `Juliette Rapala`,
     siteUrl: `https://www.anaccessibleweb.com/`,
   },

@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import styled, { ThemeProvider } from 'styled-components';
-import Layout from '../components/layout';
-import { Container } from '../components/layoutComponents';
-import SEO from '../components/seo';
-import { lightTheme } from '../theme/themes';
+import Layout from '../components/Layout';
+import { Container } from '../components/LayoutComponents';
+import SEO from '../components/SEO';
+import { lightTheme } from '../styles/themes';
 
 const siteTitleandDescriptionQuery = graphql`
   query SiteTitleAndDescriptionQuery {
@@ -25,11 +25,6 @@ const Hero = styled.div`
   justify-content: center;
   text-align: center;
 
-  h1 {
-    color: ${({ theme: { colors } }) => colors.primary};
-    font-size: 3.5rem;
-  }
-
   p {
     font-size: 1.25rem;
   }
@@ -41,13 +36,11 @@ const IndexPage: FC = () => {
   return (
     <ThemeProvider theme={lightTheme}>
       <Layout>
-        <Container>
-          <SEO title="Home" />
-          <Hero>
-            <h1>{data.site.siteMetadata?.title}</h1>
-            <p>{data.site.siteMetadata?.description}</p>
-          </Hero>
-        </Container>
+        <SEO title="Home" />
+        <Hero>
+          <h1>{data.site.siteMetadata?.title}</h1>
+          <p dangerouslySetInnerHTML={{ __html: data.site.siteMetadata?.description }} />
+        </Hero>
       </Layout>
     </ThemeProvider>
   );

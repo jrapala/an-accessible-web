@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { GlobalStyle } from '../theme/globalStyle';
-import { MainWrapper } from './layoutComponents';
-import Header from './header';
-import Footer from './footer';
+import styled from 'styled-components';
+import GlobalStyle from '../styles/GlobalStyle';
+import Header from './Header';
+import Footer from './Footer';
 
 const siteTitleQuery = graphql`
   query SiteQuery {
@@ -15,17 +15,22 @@ const siteTitleQuery = graphql`
   }
 `;
 
+const Main = styled.main`
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+`;
+
 const Layout: FC = ({ children }) => {
   const data = useStaticQuery(siteTitleQuery);
 
   return (
     <>
       <GlobalStyle />
-      <MainWrapper>
-        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-        <main>{children}</main>
-        <Footer />
-      </MainWrapper>
+      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Main>{children}</Main>
+      <Footer />
     </>
   );
 };
