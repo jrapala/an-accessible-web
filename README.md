@@ -1,5 +1,5 @@
 <h1 align="center">
-  An Inclusive Web
+  An Accessible Web
 </h1>
 
 ## 🚀 Quick start

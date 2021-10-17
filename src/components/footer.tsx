@@ -8,7 +8,7 @@ interface FooterProps {
 
 const Footer: FC<FooterProps> = ({ className }) => (
   <footer className={className}>
-    <Container>© {new Date().getFullYear()} An Inclusive Web</Container>
+    <Container>© {new Date().getFullYear()} An Accessible Web</Container>
   </footer>
 );
 

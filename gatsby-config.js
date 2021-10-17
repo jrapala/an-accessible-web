@@ -1,9 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `An Inclusive Web`,
+    title: `An Accessible Web Web`,
     description: `Learn to build accessible websites that can be used by everyone.`,
     author: `Juliette Rapala`,
-    siteUrl: `https://www.aninclusiveweb.com/`,
+    siteUrl: `https://www.anaccessibleweb.com/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
