@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import styled from 'styled-components';
+import styled, { ThemeProvider } from 'styled-components';
+import { lightTheme } from '../styles/themes';
 import GlobalStyle from '../styles/GlobalStyle';
 import Header from './Header';
 import Footer from './Footer';
@@ -26,12 +27,12 @@ const Layout: FC = ({ children }) => {
   const data = useStaticQuery(siteTitleQuery);
 
   return (
-    <>
+    <ThemeProvider theme={lightTheme}>
       <GlobalStyle />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <Main>{children}</Main>
       <Footer />
-    </>
+    </ThemeProvider>
   );
 };
 
