@@ -7,7 +7,7 @@ import Header from './Header';
 import Footer from './Footer';
 
 const siteTitleQuery = graphql`
-  query siteTitleQuery {
+  query {
     site {
       siteMetadata {
         title

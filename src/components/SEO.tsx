@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const defaultSeoQuery = graphql`
-  query defaultSeoQuery {
+  query {
     site {
       siteMetadata {
         title

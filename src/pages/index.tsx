@@ -5,7 +5,7 @@ import Layout from '../components/Layout';
 import SEO from '../components/SEO';
 
 const siteTitleandDescriptionQuery = graphql`
-  query siteTitleAndDescriptionQuery {
+  query {
     site {
       siteMetadata {
         title
